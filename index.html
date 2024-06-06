@@ -152,14 +152,17 @@
 
         .technologies {
             margin-bottom: 16px;
+        }
 
+        a {
+            color: white;
         }
     </style>
 
 
 </head>
 
-<body>
+<body onload="getRepos()">
     <section class="delicious-handrawn-regular header">
         <h1 class="underline">DESARROLLADOR WEB</h1></i>
     </section>
@@ -224,43 +227,7 @@
         <section class="projects">
             <h1 class="underline">Proyectos</i></h1>
             <section class="content">
-                <ul>
-                    <li>
-                        Barbaqueue
-                    </li>
-                    <li>
-                        Android Alphabet Soup
-                    </li>
-                    <li>
-                        Cubes
-                    </li>
-                    <li>
-                        Barbaqueue
-                    </li>
-                    <li>
-                        Android Alphabet Soup
-                    </li>
-                    <li>
-                        Cubes
-                    </li>
-                    <li>
-                        Barbaqueue
-                    </li>
-                    <li>
-                        Android Alphabet Soup
-                    </li>
-                    <li>
-                        Cubes
-                    </li>
-                    <li>
-                        Barbaqueue
-                    </li>
-                    <li>
-                        Android Alphabet Soup
-                    </li>
-                    <li>
-                        Cubes
-                    </li>
+                <ul class="content-elements">
                 </ul>
 
             </section>
@@ -286,6 +253,27 @@
         </section>
 
     </section>
+    <script>
+        function getRepos() {
+            let parentElement = document.getElementsByClassName('content-elements')[0]
+            fetch('https://api.github.com/users/dozom/repos?sort=created&direction=desc')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(repo => {
+                        let newElement = document.createElement('p')
+                        let a = document.createElement('a');
+                        a.textContent = repo.name
+                        a.href = repo.html_url;
+                        a.target = '_blank';
+                        newElement.appendChild(a)
+                        parentElement.appendChild(newElement)
+                    })
+                }
+                )
+                .catch(error => console.error('Error:', error));
+
+        }
+    </script>
 </body>
 
 </html>
