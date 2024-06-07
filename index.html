@@ -5,15 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Daniel Nager Carpio Portfolio">
-    <meta name="author" content="Devcrud">
     <title>Daniel Nager</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
     <style>
+        :root {
+            color-scheme: light dark;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -157,6 +158,43 @@
         a {
             color: white;
         }
+
+        /* Smartphones (portrait and landscape) */
+        @media only screen and (max-width: 600px) {
+
+            /* Your mobile styles go here */
+            html {
+                display: block;
+                width: 100vw;
+                padding: 0;
+            }
+
+            body {
+                display: block;
+                width: 100vw;
+                margin: 0;
+                padding-top: 0px;
+                padding-left: 0px;
+                padding-right: 0px;
+
+                padding: 1rem;
+            }
+
+            .about-work {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .about-me {
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+            }
+
+            .content {
+                width: 90vw;
+            }
+        }
     </style>
 
 
@@ -177,9 +215,9 @@
         <p class="underline">testing</p>
     </div>
     <section class="about-me delicious-handrawn-regular">
-        <h1 class="underline">Sobre mí</h1>
+        <h1 class="underline">Sobre mi</h1>
         <p>
-            Me presento, mi nombre es <span class="underline" style="text-decoration: none;">Daniel Nager Carpio
+            Mi nombre es <span class="underline" style="text-decoration: none;">Daniel Nager Carpio
             </span><br><br>Soy
             alguien al que le gustan las cosas simples
             prácticas
@@ -191,15 +229,21 @@
         <section class="curriculum">
             <div>
                 <p>
-
-                    <span> <i class="fa-solid fa-eye"></i> Visualizar currículum
-                    </span>
+                    <a href="./assets/docs/danielNagerCV2024.pdf" target="_blank">
+                        <span> <i class="fa-solid fa-eye"></i>
+                            Visualizar curriculum
+                        </span>
+                    </a>
                 </p>
             </div>
             <div>
                 <p>
-                    <span> <i class="fa-regular fa-circle-down"></i>
-                    </span> Descargar curriculum
+                    <a href="./assets/docs/danielNagerCV2024.pdf" class="download-button"
+                        download="danielNagerCV2024.pdf">
+                        <span> <i class="fa-regular fa-circle-down"></i>
+                            Descargar curriculum
+                        </span>
+                    </a>
                 </p>
             </div>
         </section>
@@ -209,17 +253,25 @@
             <h1 class="underline">Experiencia</h1>
             <section class="content">
                 <ul>
-                    <li><span class="underline">
-                            Softneos Engineering and computer services</span>
-                        <br>
-                        <br>
-                        Cargo: QA Tester, 4 meses
-                    </li>
-                    <li><span class="underline">
-                            Cloud Active Reception</span>
-                        <br>
-                        <br>
-                        Cargo: QA Tester, 4 años y 6 meses
+                    <li>
+                        <a href="https://www.linkedin.com/company/softneos/" style="color: #b0c960;" target="_blank">
+                            <p>
+                                Softneos Engineering and computer services
+                            </p>
+                        </a>
+                        <p>
+                            Cargo: QA Tester, 4 meses. En los que aprendí conceptos sobre angular y laravel.
+                        </p>
+                        <a href="https://www.linkedin.com/company/cloud-active-reception/" style="color: #b0c960;"
+                            target="_blank">
+                            <p>
+                                Cloud Active Reception
+                            </p>
+                        </a>
+                        <p>
+                            Cargo: QA Tester, 4 años y 5 meses. En los que aprendí sobre conceptos de AWS, C#, Python y
+                            otras tecnologias.
+                        </p>
                     </li>
                 </ul>
             </section>
@@ -236,17 +288,37 @@
         <section class="contact-me">
             <h1 class="underline">Contáctame</h1>
             <section class="content">
-                <p><span> <i class="fa-brands fa-linkedin-in"></i>
-                    </span> Linkedin</p>
-                <p><span> <i class="fa-regular fa-envelope"></i>
-                    </span> Correo Electrónico</p>
-                <p><span> <i class="fa-brands fa-whatsapp"></i>
-                        </i>
-                    </span> Whatsapp</p>
-                <p><span> <i class="fa-brands fa-github"></i>
-                    </span> Github</p>
-
-
+                <p>
+                    <a href=" https://www.linkedin.com/in/daniel-nager-carpio-7a1738124/" target="_blank">
+                        <span> <i class="fa-brands fa-linkedin-in"></i>
+                            Linkedin
+                        </span>
+                    </a>
+                </p>
+                <p>
+                    <a href="mailto:danielnagercarpios@gmail.com?subject=Me ha interesado tu portfolio&body=Me gustaria contactar contigo para ofrecerte una oferta.%0D%0ASaludos, %0D%0A%0D%0A[Nombre e información de la persona o empresa que contacta]"
+                        class="email-button">
+                        <span> <i class="fa-regular fa-envelope"></i>
+                            Enviar Correo Electrónico
+                        </span>
+                    </a>
+                </p>
+                <p>
+                    <a href="https://wa.me/34646198581?text=%20Me ha interesado tu perfil,%0D%0Ate interesaría una oferta para desarrollador web en: [nombre empresa]"
+                        class="whatsapp-button" target="_blank">
+                        <span> <i class="fa-brands fa-whatsapp"></i>
+                            </i>
+                        </span> Whatsapp
+                    </a>
+                </p>
+                <p>
+                    <a href="https://github.com/dozom" target="_blank">
+                        <span> <i class="fa-brands fa-github"></i>
+                            </i>
+                            Github
+                        </span>
+                    </a>
+                </p>
             </section>
 
 
